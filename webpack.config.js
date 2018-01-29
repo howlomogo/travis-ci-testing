@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 const config = {
-    entry: './src/app.js',
+    entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
@@ -15,6 +15,11 @@ const config = {
                 use: 'babel-loader'
             }
         ]
+    },
+    devServer: {
+      contentBase: path.join(__dirname, "dist"),
+      port: 8080,
+      open: true
     }
 };
 module.exports = config;
